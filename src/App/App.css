@@ -26,3 +26,12 @@ p {
   margin-top: 50px;
   color: white;
 }
+
+.movies-container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
