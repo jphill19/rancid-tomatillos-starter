@@ -1,5 +1,6 @@
 import './App.css';
 import searchIcon from '../icons/search.png';
+import McardContainer from '../component/McardContainer/mcardcontainer.component';
 
 // Example imports (for later):
 // import { useState, useEffect } from 'react';
@@ -11,7 +12,10 @@ function App() {
   return (
     <main className='App'>
       <header>
-        <h1>rancid tomatillos</h1>
+        <div className= "movies-container">
+            <h1>rancid tomatillos</h1>
+            <McardContainer />
+        </div>
       </header>
     </main>
   );
