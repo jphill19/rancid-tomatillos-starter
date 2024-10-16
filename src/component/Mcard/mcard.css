@@ -40,3 +40,9 @@
 .mcard:hover p {
   color: #000; /* Change text color on hover */
 }
+
+.vote-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

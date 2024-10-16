@@ -1,12 +1,10 @@
-import './mcardcontainer.component.css'
+import './mcardcontainer.css'
 
 import moviePosters from '../../data/movie_posters'
 import Mcard from '../Mcard/mcard.component'
 import { Fragment } from 'react'
 
-export default function McardContainer () {
-
-
+const McardContainer = () => {
   const movieCard = () => {
     return moviePosters.map((data) => {
       return (
@@ -19,9 +17,12 @@ export default function McardContainer () {
       );
     });
   };
+
   return (
     <div className='mcard-container'>
       { movieCard() }
     </div>
-  )
-}
+  );
+};
+
+export default McardContainer;
