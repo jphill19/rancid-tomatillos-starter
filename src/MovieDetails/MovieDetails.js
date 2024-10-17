@@ -1,5 +1,6 @@
 import './MovieDetails.css';
 
+
 function MovieDetails() {
   return (
     <section className='MovieDetails'>
