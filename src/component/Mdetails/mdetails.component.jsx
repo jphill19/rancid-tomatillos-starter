@@ -13,21 +13,21 @@ const Mdetails = ({movieId}) => {
   const displayGenres = ()=>{
     return genre_ids.map((genre)=>{
       return (
-        <div>
+        <div className = "mdetails-genre">
           {genre}
         </div>
       )
     })
   }
   return (
-      <div>
-        <img src={backdrop_path}/>
-        <h2>{title}</h2>
-        <div>
-          {displayGenres()}
-        </div>
-        <p>{overview}</p>
+    <div className="mdetails-container">
+      <img src={backdrop_path} alt={title} className="mdetails-backdrop" />
+      <h2 className="mdetails-title">{title}</h2>
+      <div className="mdetails-genres">
+        {displayGenres()}
       </div>
+      <p className="mdetails-overview">{overview}</p>
+    </div>
   );
 };
 

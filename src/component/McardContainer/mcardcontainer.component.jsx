@@ -1,5 +1,4 @@
 import './mcardcontainer.css'
-
 import moviePosters from '../../data/movie_posters'
 import Mcard from '../Mcard/mcard.component'
 import { Fragment } from 'react'

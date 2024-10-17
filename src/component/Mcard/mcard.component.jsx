@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './mcard.css'
-import '../ArrowButton/arrowbutton.component'
 import ArrowButton from '../ArrowButton/arrowbutton.component';
 
 

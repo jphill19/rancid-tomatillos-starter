@@ -1,8 +1,44 @@
-.mcard-container {
+.mdetails-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start; 
-  width: 90%;
-  margin: 0 auto;
-  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 1500px;
+}
+
+.mdetails-backdrop {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.mdetails-title {
+  font-size: 2rem;
+  color: #4a46a3; 
+  font-weight: bold;
+  margin: 20px 0 10px;
+}
+
+.mdetails-genres {
+  display: flex;
+  gap: 10px;
+}
+
+.mdetails-genre {
+  background-color: #A8C0FF; 
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.mdetails-overview {
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+  max-width: 800px;
+  margin: 1rem;
 }
