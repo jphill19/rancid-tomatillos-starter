@@ -1,5 +1,4 @@
 import './mdetails.css'
-// import movieDetails from '../../data/movie_details'
 import {useEffect, useState} from "react";
 
 const emptyMovie = {
@@ -27,7 +26,7 @@ const Mdetails = ({movieId}) => {
     }
     fetchData()
   },[])
-  console.log("movieDetails",movieDetails)
+
   const {title,genre_ids,overview,backdrop_path} = movieDetails
   const displayGenres = ()=>{
     return genre_ids.map((genre)=>{

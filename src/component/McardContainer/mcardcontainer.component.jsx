@@ -8,7 +8,6 @@ const McardContainer = ({pageEventHandler,mIdSetter}) => {
   const [moviesData,setMoviesData ] = useState([]);
 
   useEffect (()=>{
-
     const fetchData = async ()=> {
       try {
         const moviesResponse = await fetch(
@@ -22,9 +21,10 @@ const McardContainer = ({pageEventHandler,mIdSetter}) => {
     }
     fetchData()
   },[])
+  
+  // console.log(moviesData)
 
   const movieCard = () => {
-
     return moviesData.map((data) => {
       return (
         <Mcard 
