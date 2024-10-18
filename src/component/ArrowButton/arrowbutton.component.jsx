@@ -20,3 +20,4 @@ const ArrowButton = ({ direction, eventHandler }) => {
 };
 
 export default ArrowButton;
+
