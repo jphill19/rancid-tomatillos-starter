@@ -10,6 +10,7 @@ const emptyMovie = {
 
 const Mdetails = ({movieId}) => {
   const [movieDetails,setMovieDetails ] = useState(emptyMovie);
+  const [error,setErr ] = useState('');
 
   useEffect (()=>{
 
@@ -22,6 +23,7 @@ const Mdetails = ({movieId}) => {
         setMovieDetails(movie)
       } catch (err) {
         console.log(err, "err")
+        setErr(err.message)
       }
     }
     fetchData()
@@ -39,10 +41,12 @@ const Mdetails = ({movieId}) => {
   }
   return (
     <div className="mdetails-container">
+      {error && <h2>error</h2>}
+
       <img src={backdrop_path} alt={title} className="mdetails-backdrop" />
       <h2 className="mdetails-title">{title}</h2>
       <div className="mdetails-genres">
-        {displayGenres()}
+        {error.length < 1 && displayGenres()}
       </div>
       <p className="mdetails-overview">{overview}</p>
     </div>
