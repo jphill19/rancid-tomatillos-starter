@@ -1,4 +1,5 @@
 import homeIcon from '../../icons/home.png';
+import searchIcon from '../../icons/search.png';
 import './navbar.css'
 
 
@@ -13,12 +14,19 @@ const NavBar = ({ searchManipulation, page, pageManipulation, search}) => {
         className="home-button"
       /> 
       }
-      { page === 0  && <input
-        type="text"
-        placeholder=""
-        value={search}
-        onChange={(event) => searchManipulation(event.target.value)}
-      />}
+      { page === 0  &&
+        <div className = 'searchBox'>
+          <img
+            src={searchIcon}
+          />
+          <input
+            type="text"
+            placeholder=""
+            value={search}
+            onChange={(event) => searchManipulation(event.target.value)}
+          />
+        </div>
+      }
     </div>
 
   );
