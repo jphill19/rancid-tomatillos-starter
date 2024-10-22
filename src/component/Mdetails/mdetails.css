@@ -42,3 +42,7 @@
   max-width: 800px;
   margin: 1rem;
 }
+
+.error-message{
+  width: 100%;
+}
