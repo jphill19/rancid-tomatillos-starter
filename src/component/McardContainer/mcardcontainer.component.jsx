@@ -4,8 +4,9 @@ import { Fragment } from 'react'
 import {useState} from "react";
 import {useEffect} from "react";
 
-const McardContainer = ({pageEventHandler,mIdSetter}) => {
+const McardContainer = ({pageEventHandler,mIdSetter, query}) => {
   const [moviesData,setMoviesData ] = useState([]);
+  const [filteredMovies, setFilteredMovies] = useState(moviesData)
 
   useEffect (()=>{
     const fetchData = async ()=> {
@@ -21,11 +22,19 @@ const McardContainer = ({pageEventHandler,mIdSetter}) => {
     }
     fetchData()
   },[])
+
+
+  useEffect(() => {
+    const filtered = moviesData.filter((movie) =>
+      movie.title.toLowerCase().includes(query.toLowerCase())
+    );
+    setFilteredMovies(filtered);
+  }, [query, moviesData]);
   
   // console.log(moviesData)
 
   const movieCard = () => {
-    return moviesData.map((data) => {
+    return filteredMovies.map((data) => {
       return (
         <Mcard 
           key={data.id}

@@ -21,6 +21,7 @@
   height: auto;
   border-radius: 8px 8px 0 0;
   transition: opacity 0.2s;
+  cursor: pointer;
 }
 
 .mcard-image:hover {
@@ -38,7 +39,7 @@
 
 
 .mcard:hover p {
-  color: #000; /* Change text color on hover */
+  color: #000; 
 }
 
 .vote-container{

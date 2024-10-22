@@ -7,5 +7,5 @@
 
 
 .arrow-button:active {
-  transform: scale(0.8); /* Shrinks the button to 80% of its size */
+  transform: scale(0.8); 
 }

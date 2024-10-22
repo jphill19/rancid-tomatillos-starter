@@ -13,12 +13,12 @@ header {
   align-items: center;
   padding: 25px;
 }
-
+/* 
 h1 {
   color: white;
   font-size: 56px;
   letter-spacing: 5px;
-}
+} */
 
 p {
   font-size: 20px;
@@ -43,7 +43,7 @@ p {
   width: 100%; 
 }
 
-.home-button{
+/* .home-button{
   cursor: pointer;
   width: 4vw;
-}
+} */

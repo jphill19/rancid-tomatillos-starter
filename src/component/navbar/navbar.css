@@ -1,0 +1,17 @@
+h1 {
+  color: white;
+  font-size: 56px;
+  letter-spacing: 5px;
+}
+
+.home-button{
+  cursor: pointer;
+  width: 4vw;
+}
+
+.nav-bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; 
+}
