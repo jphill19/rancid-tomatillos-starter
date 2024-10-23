@@ -31,7 +31,7 @@ const McardContainer = ({pageEventHandler,mIdSetter, query}) => {
     setFilteredMovies(filtered);
   }, [query, moviesData]);
   
-  // console.log(moviesData)
+
 
   const movieCard = () => {
     return filteredMovies.map((data) => {

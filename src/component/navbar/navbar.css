@@ -6,7 +6,9 @@ h1 {
 
 .home-button{
   cursor: pointer;
-  width: 4vw;
+
+  background-color:  #3e49b1;
+  border: none;
 }
 
 .nav-bar{
