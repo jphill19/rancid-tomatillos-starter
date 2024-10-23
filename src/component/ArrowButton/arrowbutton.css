@@ -2,10 +2,12 @@
   width: 20px;
   height: 20px;
   cursor: pointer;
+  border: none;
+  background-color: transparent;
   transition: transform 0.2s ease-in-out;
 }
 
 
 .arrow-button:active {
-  transform: scale(0.8); /* Shrinks the button to 80% of its size */
+  transform: scale(0.8); 
 }

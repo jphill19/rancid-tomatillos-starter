@@ -3,7 +3,7 @@ import './mcard.css'
 import ArrowButton from '../ArrowButton/arrowbutton.component';
 
 
-const Mcard = ({ title, vote_count, image,pageEventHandler,mIdSetter,uniqueId }) =>{
+const Mcard = ({ title, vote_count, image,pageEventHandler,mIdSetter,uniqueId}) =>{
   const [votes, setVotes] = useState(vote_count);
 
   const handleUpvote = () => {
@@ -39,11 +39,20 @@ const Mcard = ({ title, vote_count, image,pageEventHandler,mIdSetter,uniqueId })
   return (
     <div className="mcard">
       <img src={image}
-           alt={title} className="mcard-image"
+           alt={`${title} poster`} className="mcard-image"
+           tabIndex={0}
            onClick={()=>{
              pageEventHandler(1)
              mIdSetter(uniqueId)
-           }} />
+           }}
+           onKeyDown={(event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+              pageEventHandler(1);
+              mIdSetter(uniqueId);
+            }
+          }}
+           aria-label={`View details for ${title}`}
+          />
       <div className='vote-container'>
         <ArrowButton
           direction={'up'}

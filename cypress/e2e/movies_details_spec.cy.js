@@ -20,6 +20,7 @@ describe('Movie Details', () => {
       .should("exist")
       .click()
     cy.get('.mcard-container').children().should('have.length', 4);
+    cy.get('h1').should('contain', 'rancid tomatillos')
   });
 
   it("Should load a single movies details", () => {
@@ -58,14 +59,23 @@ describe('Sad Paths', () => {
     })
 
     cy.visit('http://localhost:3000')
+    cy.get('h1').should('contain', 'rancid tomatillos')
     cy.get(':nth-child(1) > .mcard-image').click()
 
 
   })
 
   it("Should load a error message", () => {
-
+    cy.get('h2').should('contain', 'Error: Failed to fetch movie details')
   })
+
+  it("Should load a single home button & can be clicked ", () => {
+    cy.get('.home-button')
+      .should("exist")
+      .click()
+    cy.get('.mcard-container').children().should('have.length', 4);
+    cy.get('h1').should('contain', 'rancid tomatillos')
+  });
 
 })
 
