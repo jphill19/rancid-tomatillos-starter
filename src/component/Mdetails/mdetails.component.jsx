@@ -45,7 +45,7 @@ const Mdetails = () => {
       )
     })
   }
-  console.log("error", error)
+
   return (
     <div className="mdetails-container">
       {error ? (
