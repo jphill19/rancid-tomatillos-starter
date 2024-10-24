@@ -14,8 +14,6 @@ const Mdetails = () => {
   const [movieDetails,setMovieDetails ] = useState(emptyMovie);
   const [error,setErr ] = useState('');
 
-  console.log(useParams())
-
   useEffect (()=>{
 
     const fetchData = async ()=> {
