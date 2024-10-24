@@ -4,7 +4,7 @@ import { Fragment } from 'react'
 import {useState} from "react";
 import {useEffect} from "react";
 
-const McardContainer = ({pageEventHandler,mIdSetter, query}) => {
+const McardContainer = ({query}) => {
   const [moviesData,setMoviesData ] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState(moviesData)
 
@@ -42,8 +42,6 @@ const McardContainer = ({pageEventHandler,mIdSetter, query}) => {
           title={data.title}
           vote_count={data.vote_count}
           image={data.poster_path}
-          mIdSetter={mIdSetter}
-          pageEventHandler={pageEventHandler}
         />
       );
     });

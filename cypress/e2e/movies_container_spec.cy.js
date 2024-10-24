@@ -58,7 +58,14 @@ describe('Movie Container', () => {
   it("can filter movies based on search", () => {
     cy.get('#search-input').type('p');
   })
+  it("can go to movie details page", () => {
+    cy.get(':nth-child(1) > .mcard-image').click()
+    cy.url().should('eq', 'http://localhost:3000/155');
+  })
 });
+
+
+
 
 describe('Sad Paths', () => {
   beforeEach(() => {

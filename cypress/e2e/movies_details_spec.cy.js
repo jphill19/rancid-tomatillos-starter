@@ -23,6 +23,11 @@ describe('Movie Details', () => {
     cy.get('h1').should('contain', 'rancid tomatillos')
   });
 
+  it("Home button works Happy", () => {
+    cy.get('.home-button > img').click()
+    cy.url().should('eq', 'http://localhost:3000/');
+  })
+
   it("Should load a single movies details", () => {
     cy.fixture(`movie_details`).then((movie_details)=>{
       cy.get('.mdetails-backdrop').should("exist")
@@ -37,6 +42,7 @@ describe('Movie Details', () => {
       cy.get('.mdetails-overview').should("contain",movie_details.overview)
       })
     })
+
 })
 
 
@@ -76,6 +82,11 @@ describe('Sad Paths', () => {
     cy.get('.mcard-container').children().should('have.length', 4);
     cy.get('h1').should('contain', 'rancid tomatillos')
   });
+
+  it("Home button works sad", () => {
+    cy.get('.home-button > img').click()
+    cy.url().should('eq', 'http://localhost:3000/');
+  })
 
 })
 

@@ -1,5 +1,6 @@
 import './mdetails.css'
 import {useEffect, useState} from "react";
+import { useParams } from 'react-router-dom';
 
 const emptyMovie = {
   title:"",
@@ -8,9 +9,12 @@ const emptyMovie = {
   backdrop_path:"",
 }
 
-const Mdetails = ({movieId}) => {
+const Mdetails = () => {
+  const { movieId } = useParams();
   const [movieDetails,setMovieDetails ] = useState(emptyMovie);
   const [error,setErr ] = useState('');
+
+  console.log(useParams())
 
   useEffect (()=>{
 

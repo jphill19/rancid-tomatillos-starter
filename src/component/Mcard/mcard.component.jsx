@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './mcard.css'
 import ArrowButton from '../ArrowButton/arrowbutton.component';
+import { useNavigate } from 'react-router-dom';
 
 
-const Mcard = ({ title, vote_count, image,pageEventHandler,mIdSetter,uniqueId}) =>{
+const Mcard = ({ title, vote_count, image,uniqueId}) =>{
   const [votes, setVotes] = useState(vote_count);
-
+  const navigate = useNavigate();
   const handleUpvote = () => {
     updateVoteCount("up")
   }
@@ -42,15 +43,14 @@ const Mcard = ({ title, vote_count, image,pageEventHandler,mIdSetter,uniqueId}) 
            alt={`${title} poster`} className="mcard-image"
            tabIndex={0}
            onClick={()=>{
-             pageEventHandler(1)
-             mIdSetter(uniqueId)
-           }}
-           onKeyDown={(event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
-              pageEventHandler(1);
-              mIdSetter(uniqueId);
-            }
-          }}
+            navigate(`/${uniqueId}`)
+           }
+           }
+          //  onKeyDown={(event) => {
+          //   if (event.key === 'Enter' || event.key === ' ') {
+          //   navigate(`/${uniqueId}`)
+          //   }
+          // }}
            aria-label={`View details for ${title}`}
           />
       <div className='vote-container'>
