@@ -86,14 +86,12 @@ describe('Movie Container', () => {
 
 
 describe('Sad Paths', () => {
-  beforeEach(() => {
-    cy.visit('http://localhost:3000');
-  });
 
   it("will not load any movie posters for our sad path", () => {
     cy.intercept("GET", "https://rancid-tomatillos-api-cc6f59111a05.herokuapp.com/api/v1/movies", {
       statusCode: 500,
     });
+    cy.visit('http://localhost:3000');
 
     cy.get('h1').should('contain', 'rancid tomatillos');
     cy.get('#search-input').should('exist')
@@ -106,13 +104,15 @@ describe('Sad Paths', () => {
       fixture: "movie_posters"
     });
 
+    
     cy.fixture('movie_posters').then((data) => {
       cy.intercept("PATCH", `https://rancid-tomatillos-api-cc6f59111a05.herokuapp.com/api/v1/movies/${data[0].id}`, {
         statusCode: 500,
       });
 
-      cy.get(':nth-child(1) > .vote-container > [aria-label="up vote button"]').click();
-      cy.get(':nth-child(1) > .vote-container > p').should('contain', `${data[0].vote_count}`);
+    cy.visit('http://localhost:3000');
+    cy.get(':nth-child(1) > .vote-container > [aria-label="up vote button"]').click();
+    cy.get(':nth-child(1) > .vote-container > p').should('contain', `${data[0].vote_count}`);
     });
   });
 
@@ -123,16 +123,24 @@ describe('Sad Paths', () => {
     });
 
     cy.fixture('movie_posters').then((data) => {
+      cy.intercept("GET", "https://rancid-tomatillos-api-cc6f59111a05.herokuapp.com/api/v1/movies", {
+        statusCode: 200,
+        fixture: "movie_posters"
+      });
       cy.intercept("PATCH", `https://rancid-tomatillos-api-cc6f59111a05.herokuapp.com/api/v1/movies/${data[0].id}`, {
         statusCode: 500,
       });
-
+      cy.visit('http://localhost:3000');
       cy.get(':nth-child(1) > .vote-container > [aria-label="down vote button"]').click();
       cy.get(':nth-child(1) > .vote-container > p').should('contain', `${data[0].vote_count}`);
     });
   });
 
   it("It wont filter with no cards on screen", () => {
+    cy.intercept("GET", "https://rancid-tomatillos-api-cc6f59111a05.herokuapp.com/api/v1/movies", {
+      statusCode: 500,
+    });
+    cy.visit('http://localhost:3000');
     cy.get('#search-input').type('p');
     cy.get('.mcard-container').children().should('have.length', 0);
   });
