@@ -10,8 +10,6 @@ function Home () {
   const location = useLocation();
   const isHome = location.pathname === '/';
 
-  console.log("location", location)
-
   return (
     <main className=''>
       <header>
