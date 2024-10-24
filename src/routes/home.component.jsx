@@ -1,6 +1,5 @@
 import NavBar from "../component/navbar/navbar.component";
 import McardContainer from "../component/McardContainer/mcardcontainer.component";
-import Mdetails from "../component/Mdetails/mdetails.component";
 import {useState} from "react";
 import {Outlet, useLocation} from "react-router-dom";
 
