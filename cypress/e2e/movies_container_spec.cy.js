@@ -57,6 +57,24 @@ describe('Movie Container', () => {
 
   it("can filter movies based on search", () => {
     cy.get('#search-input').type('p');
+    cy.get('.mcard-container').children().should('have.length', 2);
+
+    cy.get(':nth-child(1) > .mcard-image')
+    .should('have.attr', 'alt', 'Parasite poster');
+
+    cy.get(':nth-child(2) > .mcard-image')
+    .should('have.attr', 'alt', 'Pulp Fiction poster');
+
+    cy.get('#search-input').type('u');
+    cy.get('.mcard-container').children().should('have.length', 1);
+
+    cy.get(':nth-child(1) > .mcard-image')
+    .should('have.attr', 'alt', 'Pulp Fiction poster');
+
+    cy.get('#search-input').clear()
+    cy.get('.mcard-container').children().should('have.length', 4);
+
+
   })
   it("can go to movie details page", () => {
     cy.get(':nth-child(1) > .mcard-image').click()
@@ -112,5 +130,10 @@ describe('Sad Paths', () => {
       cy.get(':nth-child(1) > .vote-container > [aria-label="down vote button"]').click();
       cy.get(':nth-child(1) > .vote-container > p').should('contain', `${data[0].vote_count}`);
     });
+  });
+
+  it("It wont filter with no cards on screen", () => {
+    cy.get('#search-input').type('p');
+    cy.get('.mcard-container').children().should('have.length', 0);
   });
 });
