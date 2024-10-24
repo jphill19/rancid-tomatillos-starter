@@ -37,9 +37,9 @@ const Mdetails = () => {
 
   const {title,genre_ids = [],overview,backdrop_path} = movieDetails
   const displayGenres = ()=>{
-    return genre_ids.map((genre)=>{
+    return genre_ids.map((genre, index)=>{
       return (
-        <div className = "mdetails-genre">
+        <div className= "mdetails-genre" key={index}>
           {genre}
         </div>
       )
