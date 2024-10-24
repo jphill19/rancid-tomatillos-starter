@@ -1,8 +1,6 @@
 import './mcardcontainer.css'
 import Mcard from '../Mcard/mcard.component'
-import { Fragment } from 'react'
-import {useState} from "react";
-import {useEffect} from "react";
+import {useEffect, useState, Fragment} from "react";
 
 const McardContainer = ({query}) => {
   const [moviesData,setMoviesData ] = useState([]);
