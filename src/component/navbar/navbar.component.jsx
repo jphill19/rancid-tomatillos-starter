@@ -39,6 +39,7 @@ const NavBar = ({ search, isHome, searchManipulation}) => {
           />
           <input
             type="text"
+            tabIndex={0}
             placeholder=""
             value={deferredSearch}
             id='search-input'

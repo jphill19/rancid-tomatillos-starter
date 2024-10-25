@@ -46,11 +46,11 @@ const Mcard = ({ title, vote_count, image,uniqueId}) =>{
             navigate(`/${uniqueId}`)
            }
            }
-          //  onKeyDown={(event) => {
-          //   if (event.key === 'Enter' || event.key === ' ') {
-          //   navigate(`/${uniqueId}`)
-          //   }
-          // }}
+           onKeyDown={(event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+            navigate(`/${uniqueId}`)
+            }
+          }}
            aria-label={`View details for ${title}`}
           />
       <div className='vote-container'>
